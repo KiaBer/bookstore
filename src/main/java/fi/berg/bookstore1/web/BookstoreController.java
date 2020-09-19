@@ -21,11 +21,6 @@ public class BookstoreController {
 	@Autowired
 	private CategoryRepository crepository;
 	
-	@RequestMapping("/index")
-	public String giveIndexPage() {
-		return "Index!";
-	}
-	
 	@RequestMapping("/booklist")
 	public String returnAllBooks(Model model) {
 		model.addAttribute("books", brepository.findAll());
