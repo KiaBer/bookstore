@@ -39,11 +39,6 @@ public class BookstoreController {
 		brepository.save(book);
 		return "redirect:booklist";
 	}
-	@PostMapping("/edit/save")
-	public String saveEdit(Book book) {
-		brepository.save(book);
-		return "redirect:../booklist";
-	}
 	
 	@GetMapping(value = "/delete/{id}")
 	public String deleteBook(@PathVariable("id") Long bookId, Model model) {
