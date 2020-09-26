@@ -26,6 +26,11 @@ public class BookstoreController {
 	@Autowired
 	private CategoryRepository crepository;
 	
+	@RequestMapping(value="/login")
+	public String login() {
+		return "login";
+	}
+		
 	@RequestMapping("/booklist")
 	public String returnAllBooks(Model model) {
 		model.addAttribute("books", brepository.findAll());

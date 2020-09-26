@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -21,6 +22,7 @@ public class Book {
 	@ManyToOne
 	@JsonManagedReference
     @JoinColumn(name = "categoryid")
+	@JsonIgnore
 	private Category category;
 	
 	public Book() {
@@ -41,6 +43,12 @@ public class Book {
 		this.title = title;
 		this.author = author;
 		this.category = category;
+	}
+	
+	public Book(String title, String author) {
+		super();
+		this.title = title;
+		this.author = author;
 	}
 
 	public Long getId() {
