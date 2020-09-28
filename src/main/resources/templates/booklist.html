@@ -19,7 +19,7 @@
 			<th>Author</th>
 			<th>Title</th>
 			<th>Category</th>
-			<th sec:authorize="hasRole('ADMIN')"></th>
+			
 		</tr>
 		<tr th:each = "book : ${books}">
 			<td th:text="${book.author}"></td>
