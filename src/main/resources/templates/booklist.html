@@ -26,7 +26,8 @@
 			<td th:text="${book.title}"></td>
 			<td th:text="${book.category.name}"></td>
 			<td><a th:href="@{/edit/{id}(id=${book.id})}">Edit</a></td>
-			<td sec:authorize="hasRole('ADMIN')"><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
+			
+			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
 		</tr>
 	</table>
 	<a href="/add">Add a new book</a>
